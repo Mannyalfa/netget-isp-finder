@@ -30,4 +30,4 @@ css api: material.io
 
 ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netgetad.jpg)
 
-deployed page url: ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/settings/pages) 
+deployed page url: ![screenshot](https://mannyalfa.github.io/netget-isp-finder/) 
