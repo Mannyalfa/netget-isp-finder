@@ -4,7 +4,9 @@ title: "NETGET ISP finder
 
 module 7, group project 1
 
-team members: Manny Alfaro
+team members: 
+
+              Manny Alfaro
 
               Gabe Gonzalez
 
@@ -31,11 +33,11 @@ THEN I populate fields based on a set criteria and
 
 WHEN I submit my request
 
-THEN I should receive information on isp's that satisfy the criteria, including at a minimum
+THEN I should receive information on isps that satisfy the criteria, including at a minimum
 
 isp name, web-address, with details to be determined
 
-api's: google maps, google customer search 
+apis: google maps, google customer search 
 
 css api: material.io
 
@@ -43,5 +45,5 @@ css api: material.io
 
 ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netgetad.jpg)
 
-deployed page url: ![screenshot](https://mannyalfa.github.io/netget-isp-finder/)
+deployed page url: https://mannyalfa.github.io/netget-isp-finder/
 
