@@ -2,6 +2,19 @@
 
 title: "NETGET ISP finder
 
+module 7, group project 1
+
+team members: Manny Alfaro
+
+              Gabe Gonzalez
+
+              Gillespie Parker
+
+              Kerby Henry
+
+              Roy Moore
+
+
 description: a website that finds internet service providers based on criteria to be determined. 
 
 AS A person looking for an internet service provider in my area
@@ -30,4 +43,5 @@ css api: material.io
 
 ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netgetad.jpg)
 
-deployed page url: ![screenshot](https://mannyalfa.github.io/netget-isp-finder/) 
+deployed page url: ![screenshot](https://mannyalfa.github.io/netget-isp-finder/)
+
