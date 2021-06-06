@@ -9,3 +9,8 @@ image url("./assets/images/netget.jpg")
 }
 h1 {
 }
+
+/* Search button color */
+#search-button {
+	color: #fff;
+	background-color: blue;
