@@ -30,24 +30,34 @@ $("#search-button").on("click", function (event) {
 	if (q === "") {
 		return alert("Please Enter Valid City Name ! ");
 	}
-	getWeather(q);
+	getBiz(q);
 
 	saveToLocalStorage(q);
 });
 // Button for searched city
-function createRecentSearchBtn(q) {
-	var newLi = $("<li>");
-	var newBtn = $("<button>");
-	//Adding Extra ID for Button to stop Creating Duplicate Button on Click
-	newBtn.attr("id", "extraBtn");
-	newBtn.addClass("button is-small recentSearch");
-	newBtn.text(q);
-	newLi.append(newBtn);
-	$("#historyList").prepend(newLi);
-	//setting click function to prevent duplicate button
-	$("#extraBtn").on("click", function () {
-		var newQ = $(this).text();
-		getList(newQ);
+
+//get location data
+function getBiz(q) {
+	var queryURL =
+		"https://google-search3.p.rapidapi.com/api/v1/serp/" + q + /*data TBD*/
+		APIKey;
+	$.ajax({
+		// gets the current weather info
+		url: queryURL,
+		method: "GET",
+		error: (err) => {
+			//If API through error then alert
+			alert("City Not Found");
+			return;
+
+
+
+
+//get business data
+
+// get ISP details TBD
+
+//
 
 
 
