@@ -1,14 +1,22 @@
 body{
-background-color:black;
+	background-image: url("../images/netget-globe.png"); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
 
 }
 
-header {
+#search-bar {
+background-color: lightblue;
 
 }
 
 div {
-image url("./assets/images/netget.jpg")
+
 }
 h1 {		
 	
@@ -24,5 +32,4 @@ h3{
 
 /* Search button color */
 #search-button {
-	color: #fff;
-	background-color: blue;
+}
