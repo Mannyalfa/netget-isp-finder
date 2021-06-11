@@ -1,4 +1,36 @@
-$(window).on("load", function () {
+document.getElementById("search-button").addEventListener
+("click", searchButton, placeId);
+
+
+function searchButton () {
+	
+	fetch("https://api.allorigins.win/raw?url=https%3A//maps.googleapis.com/maps/api/place/textsearch/json%3Fquery%3Dinternet+servic+provider+in+orlando%26key%3DAIzaSyDr0xMEDOlQ6Lal0sfxM954Mh1IXI-V_40&callback=?")
+        .then(response => response.text())
+        .then(response => console.log(JSON.parse(response)))
+		
+		
+
+		
+		
+}
+
+function placeId () {
+	fetch("http://api.allorigins.win/get?url=https%3A//maps.googleapis.com/maps/api/place/details/json%3Fplace_id%3DChIJr5bVFQJ754gRivHFkJhOGJw%26key%3DAIzaSyDr0xMEDOlQ6Lal0sfxM954Mh1IXI-V_40&callback=?")
+        .then(response => response.text())
+        .then(response => console.log(JSON.parse(response)))
+		
+}
+
+
+
+
+
+
+
+
+
+
+/*$(window).on("load", function () {
 
 
 	// API Key
@@ -48,4 +80,4 @@ $(window).on("load", function () {
 				var webAddress = $("<p>").text("Website: " + response.website + "<p>");
 				var custRating = $("<p>").text("Customer rating (1-5): " + response.main.rating + "<p>");
 			})
-		}
+		}*/
