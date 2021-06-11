@@ -59,7 +59,7 @@ jQuery.ajaxPrefilter(function (options) {
 					var ispName = $("<p>").text("ISP:" + response.name + "<p>");
 					var phoneNumber = $("<p>").text("Phone: " + response.formatted_phone_number + "<p>");
 					var webAddress = $("<p>").text("Website: " + response.website + "<p>");
-					var custRating = $("<p>").text("Customer rating (1-5): " + response.main.rating + "<p>");
+					var custRating = $("<p>").text("Customer rating (1-5): " + response.rating + "<p>");
 				})
 			}
 			});
