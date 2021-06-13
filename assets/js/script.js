@@ -9,18 +9,18 @@ $(window).on("load", function () {
 
 	// alternate CORS-code
 
-	$.ajax({
-		headers: { "Accept": "application/json" },
-		type: 'GET',
-		url: 'https://cl.ly/2wr4',
-		crossDomain: true,
-		beforeSend: function (xhr) {
-			xhr.withCredentials = true;
-		},
-		success: function (data, textStatus, request) {
-			console.log(data);
-		}
-	});
+	// $.ajax({
+	// 	headers: { "Accept": "application/json" },
+	// 	type: 'GET',
+	// 	url: 'https://cl.ly/2wr4',
+	// 	crossDomain: true,
+	// 	beforeSend: function (xhr) {
+	// 		xhr.withCredentials = true;
+	// 	},
+	// 	success: function (data, textStatus, request) {
+	// 		console.log(data);
+	// 	}
+	//});
 	// API Key
 	var APIKey = "AIzaSyDr0xMEDOlQ6Lal0sfxM954Mh1IXI-V_40";
 	var citySearch = $("#search-input").val();
@@ -41,8 +41,8 @@ $(window).on("load", function () {
 	});
 	//get ISP providers by city
 	function getBusiness(citySearch) {
-		var placeFind =
-			"https://maps.googleapis.com/maps/api/place/textsearch/json?query=internet+service+provider+in+" + citySearch + "&key=" + APIKey;
+		var placeFind = "https://api.allorigins.win/raw?url=" + encodeURIComponent 
+			("https://maps.googleapis.com/maps/api/place/textsearch/json?query=internet+service+provider+in+" + citySearch + "&key=" + APIKey)
 		$.ajax({
 			// gets the ISP provider info
 			url: placeFind,
@@ -56,8 +56,8 @@ $(window).on("load", function () {
 				for (i = 0; i < 4; i++) {
 
 
-					var placeDetails =
-						"https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placesArray[i].place_id + "&key=" + APIKey;
+					var placeDetails = "https://api.allorigins.win/raw?url=" + encodeURIComponent 
+						("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placesArray[i].place_id + "&key=" + APIKey)
 					console.log("arrayList[i}");
 					$.ajax({
 						url: placeDetails,
