@@ -64,7 +64,7 @@ $(window).on("load", function () {
 						//displayOptions.addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3");
 						var cardDiv = $("<div>").addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3 overflow-hide");
 
-						var wifiIcon = $("<i>").addClass("left material-icons white-text").text("wifi");
+						var wifiIcon = $("<i>").addClass("left material-icons black-text").text("wifi");
 						cardDiv.append(wifiIcon)
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
