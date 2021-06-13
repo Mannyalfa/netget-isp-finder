@@ -5,7 +5,9 @@ body{
 	-o-background-size: cover;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
+    padding: 0;
+    margin: 0;
 
 
 }
