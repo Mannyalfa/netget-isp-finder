@@ -81,7 +81,7 @@ $(window).on("load", function () {
 						console.log(response.result.rating);
 
 						var displayOptions = $("isp");
-						displayOptions.addClass(/*need cards with proper dimensions HERE!*/);
+						displayOptions.addClass('.card-action');
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
 						var ispName = $("<p>").text("ISP:" + response.result.name + "<p>");
