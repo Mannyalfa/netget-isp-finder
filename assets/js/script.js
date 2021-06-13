@@ -1,6 +1,6 @@
 $(window).on("load", function () {
 
-	/* CORS-code
+	/*CORS-code
 	jQuery.ajaxPrefilter(function (options) {
 		if (options.crossDomain && jQuery.support.cors) {
 			options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
@@ -12,7 +12,7 @@ $(window).on("load", function () {
 	$.ajax({
 		headers: { "Accept": "application/json" },
 		type: 'GET',
-		url: 'http://cl.ly/2wr4',
+		url: 'https://cl.ly/2wr4',
 		crossDomain: true,
 		beforeSend: function (xhr) {
 			xhr.withCredentials = true;
@@ -31,12 +31,12 @@ $(window).on("load", function () {
 		event.preventDefault();
 		citySearch = $("#search-input").val();
 		getBusiness(citySearch);
-		/* if (citySearch === "") {
+		if (citySearch === "") {
 			//Modal
-			$(document).ready(function () {
-				$('.modal').modal();*/
-		/*});
-	}*/
+			$.get(this.href, function (html) {
+				$(html).appendTo('body').modal();
+			});
+		}
 
 	});
 	//get ISP providers by city
