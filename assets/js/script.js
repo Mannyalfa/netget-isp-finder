@@ -68,26 +68,26 @@ $(window).on("load", function () {
 
 						console.log("========================================================");
 
-						console.log("name");
+						//console.log("name");
 						console.log(response.result.name);
 
-						console.log("formatted_phone_number");
+						//console.log("formatted_phone_number");
 						console.log(response.result.formatted_phone_number);
 
-						console.log("website");
+						//console.log("website");
 						console.log(response.result.website);
 
-						console.log("rating");
+						//console.log("rating");
 						console.log(response.result.rating);
 
-						var displayOptions = $("isp");
-						displayOptions.addClass('.card-action');
+						//var displayOptions = $("isp");
+						displayOptions.addClass("left col s4 flow-text input-group card blue-grey darken-1 left-align");
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
-						var ispName = $("<p>").text("ISP:" + response.result.name + "<p>");
-						var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number + "<p>");
-						var webAddress = $("<p>").text("Website: " + response.result.website + "<p>");
-						var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating + "<p>");
+						var ispName = $("<p>").text("ISP:" + response.result.name);
+						var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number);
+						var webAddress = $("<p>").text("Website: " + response.result.website);
+						var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating);
 
 						//need a conditional statement for null("")fields where response info is missing
 						displayOptions
