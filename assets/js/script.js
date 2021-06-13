@@ -80,28 +80,48 @@ $(window).on("load", function () {
 						//console.log("rating");
 						console.log(response.result.rating);
 
-						//var displayOptions = $("isp");
-						displayOptions.addClass("left col s4 flow-text input-group card blue-grey darken-1 left-align");
+						var displayOptions = $(".isp");
+						//displayOptions.addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3");
+						var cardDiv = $("<div>").addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3 overflow-hidde");
+
+						var wifiIcon =$("<i>").addClass("left material-icons white-text").text("wifi");
+						cardDiv.append(wifiIcon)
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
-						var ispName = $("<p>").text("ISP:" + response.result.name);
-						var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number);
-						var webAddress = $("<p>").text("Website: " + response.result.website);
-						var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating);
+						if (response.result.name != undefined) {
+							var ispName = $("<p>").text("ISP: " + response.result.name);
+							cardDiv.append(ispName)
+						}
 
-						//need a conditional statement for null("")fields where response info is missing
-						displayOptions
-							.append(image)
-							.append(ispName)
-							.append(phoneNumber)
-							.append(webAddress)
-							.append(custRating);
-						$("#isp").append(displayOptions);
-						// };
+						if (response.result.formatted_phone_number != undefined) {
+							var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number);
+							cardDiv.append(phoneNumber)
+						}
 
-					})
-				};
-			});
+						if (response.result.rating != undefined) {
+							var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating);
+							cardDiv.append(custRating)
+						}
+
+						if (response.result.website != undefined) {
+							var webAddress = $("<p>").text("Website: " + response.result.website);
+							cardDiv.append(webAddress)
+						}
+
+
+					//need a conditional statement for null("")fields where response info is missing
+					displayOptions.append(cardDiv)
+					/*.append(image)
+					.append(ispName)
+					.append(phoneNumber)
+					.append(webAddress)
+					.append(custRating);
+				$("#isp").append(displayOptions);*/
+					// };
+
+				})
+	};
+});
 
 	}
 });
