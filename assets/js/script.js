@@ -1,8 +1,24 @@
 $(window).on("load", function () {
 
+	/* CORS-code
 	jQuery.ajaxPrefilter(function (options) {
 		if (options.crossDomain && jQuery.support.cors) {
 			options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+		}
+	});*/
+
+	// alternate CORS-code
+
+	$.ajax({
+		headers: { "Accept": "application/json" },
+		type: 'GET',
+		url: 'http://cl.ly/2wr4',
+		crossDomain: true,
+		beforeSend: function (xhr) {
+			xhr.withCredentials = true;
+		},
+		success: function (data, textStatus, request) {
+			console.log(data);
 		}
 	});
 	// API Key
@@ -15,12 +31,12 @@ $(window).on("load", function () {
 		event.preventDefault();
 		citySearch = $("#search-input").val();
 		getBusiness(citySearch);
-		if (citySearch === "") {
+		/* if (citySearch === "") {
 			//Modal
 			$(document).ready(function () {
-				$('.modal').modal();
-			});
-		}
+				$('.modal').modal();*/
+		/*});
+	}*/
 
 	});
 	//get ISP providers by city
@@ -64,11 +80,23 @@ $(window).on("load", function () {
 						console.log("rating");
 						console.log(response.result.rating);
 
-						var image = $('<img class="imgsize">').attr("src", "./assets/images/wifiSymbol.png");
+						var displayOptions = $("isp");
+						displayOptions.addClass(/*need cards with proper dimensions HERE!*/);
+
+						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
 						var ispName = $("<p>").text("ISP:" + response.result.name + "<p>");
 						var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number + "<p>");
 						var webAddress = $("<p>").text("Website: " + response.result.website + "<p>");
 						var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating + "<p>");
+
+						//need a conditional statement for null("")fields where response info is missing
+						displayOptions
+							.append(image)
+							.append(ispName)
+							.append(phoneNumber)
+							.append(webAddress)
+							.append(custRating);
+						$("#isp").append(displayOptions);
 						// };
 
 					})
