@@ -1,12 +1,26 @@
 $(window).on("load", function () {
 
-jQuery.ajaxPrefilter(function (options) {
-	if (options.crossDomain && jQuery.support.cors) {
-		options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-}
-});
+	/* CORS-code
+	jQuery.ajaxPrefilter(function (options) {
+		if (options.crossDomain && jQuery.support.cors) {
+			options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+		}
+	});*/
 
+	// alternate CORS-code
 
+	$.ajax({
+		headers: { "Accept": "application/json" },
+		type: 'GET',
+		url: 'http://cl.ly/2wr4',
+		crossDomain: true,
+		beforeSend: function (xhr) {
+			xhr.withCredentials = true;
+		},
+		success: function (data, textStatus, request) {
+			console.log(data);
+		}
+	});
 	// API Key
 	var APIKey = "AIzaSyDr0xMEDOlQ6Lal0sfxM954Mh1IXI-V_40";
 	var citySearch = $("#search-input").val();
@@ -17,14 +31,14 @@ jQuery.ajaxPrefilter(function (options) {
 		event.preventDefault();
 		citySearch = $("#search-input").val();
 		getBusiness(citySearch);
-		/*if (citySearch === "") {
+		/* if (citySearch === "") {
 			//Modal
 			$(document).ready(function () {
-				$('.modal').modal();
-			});
-		}*/
+				$('.modal').modal();*/
+		/*});
+	}*/
 
-		});
+	});
 	//get ISP providers by city
 	function getBusiness(citySearch) {
 		var placeFind =
@@ -35,33 +49,58 @@ jQuery.ajaxPrefilter(function (options) {
 			method: "GET"
 		})
 			.then(function (response) {
+				console.log(("response"));
 				console.log((response));
 				var placesArray = response.results;
-				var i; 
-				for(i=0; i < 4; i++) {
-			
+				var i;
+				for (i = 0; i < 4; i++) {
 
-				var placeDetails =
-					"https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placesArray[i].place_id + "&key=" + APIKey;
 
-				$.ajax({
-					url: placeDetails,
-					method: "GET"
+					var placeDetails =
+						"https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placesArray[i].place_id + "&key=" + APIKey;
+					console.log("arrayList[i}");
+					$.ajax({
+						url: placeDetails,
+						method: "GET"
 
-					//return details and format response in HTML
-				}).then(function (response) {
-					console.log(response);
-					//to avoid repeating city information on button click
-					$("card-action").empty();
-					$("").empty();
+						//return details and format response in HTML
+					}).then(function (response) {
 
-					var image = $('<img class="imgsize">').attr("src", "http:");
-					var ispName = $("<p>").text("ISP:" + response.name + "<p>");
-					var phoneNumber = $("<p>").text("Phone: " + response.formatted_phone_number + "<p>");
-					var webAddress = $("<p>").text("Website: " + response.website + "<p>");
-					var custRating = $("<p>").text("Customer rating (1-5): " + response.rating + "<p>");
-				})
-			}
+						console.log("========================================================");
+
+						console.log("name");
+						console.log(response.result.name);
+
+						console.log("formatted_phone_number");
+						console.log(response.result.formatted_phone_number);
+
+						console.log("website");
+						console.log(response.result.website);
+
+						console.log("rating");
+						console.log(response.result.rating);
+
+						var displayOptions = $("isp");
+						displayOptions.addClass(/*need cards with proper dimensions HERE!*/);
+
+						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
+						var ispName = $("<p>").text("ISP:" + response.result.name + "<p>");
+						var phoneNumber = $("<p>").text("Phone: " + response.result.formatted_phone_number + "<p>");
+						var webAddress = $("<p>").text("Website: " + response.result.website + "<p>");
+						var custRating = $("<p>").text("Customer rating (1-5): " + response.result.rating + "<p>");
+
+						//need a conditional statement for null("")fields where response info is missing
+						displayOptions
+							.append(image)
+							.append(ispName)
+							.append(phoneNumber)
+							.append(webAddress)
+							.append(custRating);
+						$("#isp").append(displayOptions);
+						// };
+
+					})
+				};
 			});
 
 	}
