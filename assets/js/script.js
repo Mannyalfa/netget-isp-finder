@@ -1,26 +1,5 @@
 $(window).on("load", function () {
 
-	/*CORS-code
-	jQuery.ajaxPrefilter(function (options) {
-		if (options.crossDomain && jQuery.support.cors) {
-			options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-		}
-	});*/
-
-	// alternate CORS-code
-
-	// $.ajax({
-	// 	headers: { "Accept": "application/json" },
-	// 	type: 'GET',
-	// 	url: 'https://cl.ly/2wr4',
-	// 	crossDomain: true,
-	// 	beforeSend: function (xhr) {
-	// 		xhr.withCredentials = true;
-	// 	},
-	// 	success: function (data, textStatus, request) {
-	// 		console.log(data);
-	// 	}
-	//});
 	// API Key
 	var APIKey = "AIzaSyDr0xMEDOlQ6Lal0sfxM954Mh1IXI-V_40";
 	var citySearch = $("#search-input").val();
@@ -33,15 +12,16 @@ $(window).on("load", function () {
 		getBusiness(citySearch);
 		if (citySearch === "") {
 			//Modal
-			$.get(this.href, function (html) {
-				$(html).appendTo('body').modal();
+			$(document).ready(function () {
+				$('.modal').modal();
 			});
+		
 		}
 
 	});
 	//get ISP providers by city
 	function getBusiness(citySearch) {
-		var placeFind = "https://api.allorigins.win/raw?url=" + encodeURIComponent 
+		var placeFind = "https://api.allorigins.win/raw?url=" + encodeURIComponent
 			("https://maps.googleapis.com/maps/api/place/textsearch/json?query=internet+service+provider+in+" + citySearch + "&key=" + APIKey)
 		$.ajax({
 			// gets the ISP provider info
@@ -56,7 +36,7 @@ $(window).on("load", function () {
 				for (i = 0; i < 4; i++) {
 
 
-					var placeDetails = "https://api.allorigins.win/raw?url=" + encodeURIComponent 
+					var placeDetails = "https://api.allorigins.win/raw?url=" + encodeURIComponent
 						("https://maps.googleapis.com/maps/api/place/details/json?place_id=" + placesArray[i].place_id + "&key=" + APIKey)
 					console.log("arrayList[i}");
 					$.ajax({
@@ -84,7 +64,7 @@ $(window).on("load", function () {
 						//displayOptions.addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3");
 						var cardDiv = $("<div>").addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3 overflow-hide");
 
-						var wifiIcon =$("<i>").addClass("left material-icons white-text").text("wifi");
+						var wifiIcon = $("<i>").addClass("left material-icons white-text").text("wifi");
 						cardDiv.append(wifiIcon)
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
@@ -107,21 +87,10 @@ $(window).on("load", function () {
 							var webAddress = $("<p>").text("Website: " + response.result.website);
 							cardDiv.append(webAddress)
 						}
-
-
-					//need a conditional statement for null("")fields where response info is missing
-					displayOptions.append(cardDiv)
-					/*.append(image)
-					.append(ispName)
-					.append(phoneNumber)
-					.append(webAddress)
-					.append(custRating);
-				$("#isp").append(displayOptions);*/
-					// };
-
-				})
-	};
-});
+						displayOptions.append(cardDiv)
+					})
+				};
+			});
 
 	}
 });
