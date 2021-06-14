@@ -62,14 +62,14 @@ $(window).on("load", function () {
 
 						var displayOptions = $(".isp");
 						//displayOptions.addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3");
-						var cardDiv = $("<div>").addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3 overflow-hide");
+						var cardDiv = $("<div>").addClass("right col s7 center-align card blue-grey darken-1 white-text csshook flow-text offset-3 overflow-hide");
 
-						var wifiIcon = $("<i>").addClass("left material-icons black-text").text("wifi");
+						var wifiIcon = $("<i>").addClass("left material-icons white-text").text("wifi");
 						cardDiv.append(wifiIcon)
 
 						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
 						if (response.result.name != undefined) {
-							var ispName = $("<h3>").text("ISP: " + response.result.name);
+							var ispName = $("<h5>").text("ISP: " + response.result.name);
 							cardDiv.append(ispName)
 						}
 
