@@ -2,7 +2,7 @@
 
 title: "NETGET ISP finder
 
-module 7, group project 1
+module 7, group project 1, group 4
 
 team members: 
 
@@ -35,13 +35,13 @@ WHEN I submit my request
 
 THEN I should receive information on isps that satisfy the criteria, including at a minimum
 
-isp name, web-address, with details to be determined
 
-apis: google maps, google customer search 
 
-css api: material.io
+apis: google maps  place find, google maps place details, Allorigins CORS api
 
-![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netget.jpg)
+css api: materialize
+
+![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/screenshot.jpg)
 
 ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netgetad.jpg)
 
