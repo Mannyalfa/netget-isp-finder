@@ -70,9 +70,6 @@ footer{
     
 }
 
-.csshook{
-    font-size: 10px;
-}
 
 .modal-bg {
     position: fixed;
@@ -104,11 +101,6 @@ footer{
 .closeBtn {
     align-items: center;
 }
-.isp { color: white;
-
-    
-    
-    
-    
+#btn1 {
+     margin-top: 15px;
 }
-

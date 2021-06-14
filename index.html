@@ -38,13 +38,19 @@
         <!-- Search Form with Button -->
 
         <div class="left col s4 flow-text input-group card blue-grey darken-1 left-align">
-          <input id="search-input" type="text" class="form-control" placeholder="Enter City Name"
-            aria-label="Enter city name">
-          <div class="input-group-append">
-            <button class="right btn waves-effect blue darken-3 white-text" type="submit" name="action" id="search-button">
-              <i class="small material-icons center">search</i>
-            </button>
-          </div>
+          <div class="row">
+            <form class="col s12">
+                    <div class="input-field col s6">
+                      <input id="search-input" type="text" class="form-control" placeholder="Enter City Name"
+                      aria-label="Enter city name">
+                    </div>
+                    <div class="input-group-append col s6" id="btn1">
+                      <button class="right btn waves-effect blue white-text" type="submit" name="action" id="search-button">
+                        <i class="small material-icons center">search</i>
+                      </button>
+                    </div>
+            </form>
+        </div>
           <div class="card-content white-text flow-text">
             <p>You are just ONE click away from finding internet service providers in your area!</p>
           </div>
@@ -52,9 +58,7 @@
 
         <!---four returns go here-->
         <div class="isp">
-          
         </div>
-     
         <!-- Modal Structure -->
         <div class="modal-bg">
           <div class="modal1">
