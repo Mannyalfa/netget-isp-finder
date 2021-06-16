@@ -35,7 +35,7 @@ WHEN I submit my request
 
 THEN I should receive information on isps that satisfy the criteria, including at a minimum
 
-
+Languages used: HTML, CSS, Jquery
 
 apis: google maps  place find, google maps place details, Allorigins CORS api
 
@@ -43,7 +43,11 @@ css api: materialize
 
 ![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/screenshot.jpg)
 
-![screenshot](https://github.com/Mannyalfa/netget-isp-finder/blob/main/assets/images/netgetad.jpg)
 
 deployed page url: https://mannyalfa.github.io/netget-isp-finder/
+
+**Github commits reflect contribution with the exception of the project due-date 4-hr zoom meeting
+with Kerby Gillespie & Manny to finalize much of the project styling: Special thanks to Kerby Henry 
+for finding a fix for a long-standing CSS issue. In which changes were integrated via zoom chat & slack 
+messages to save time & merge conflicts.
 

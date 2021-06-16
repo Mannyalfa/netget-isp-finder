@@ -52,13 +52,12 @@ $(window).on("load", function () {
 						console.log(response.result.rating);
 
 						var displayOptions = $(".isp");
-						//displayOptions.addClass("right col s7 center-align card blue-grey darken-1 flow-text offset-3");
 						var cardDiv = $("<div>").addClass("right col s7 left-align card blue-grey darken-1 white-text csshook flow-text offset-3 overflow-hide");
 
 						var wifiIcon = $("<i>").addClass("left material-icons white-text").text("wifi");
 						cardDiv.append(wifiIcon)
 
-						/*	var image = $(MATERIALIZE IMAGE SCRIPT WITH INTERNET ICON GOES HERE!!);*/
+					
 						if (response.result.name != undefined) {
 							var ispName = $("<h6>").text(response.result.name);
 							cardDiv.append(ispName)
